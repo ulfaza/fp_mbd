@@ -22,7 +22,7 @@
                 <div class="row tm-site-header">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 text-xs-center">
                         <h1 class="tm-site-title">CURSOR ULFA</h1>
-                        <P>tulis soal cursornya</P>
+                        <P>Menampilkan data anggota yang meminjam buku dan telat mengembalikan lebih dari 3 hari.</P>
                     </div>
                 </div>
 
