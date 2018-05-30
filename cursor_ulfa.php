@@ -27,6 +27,41 @@
                 </div>
 
                 <!-- tampilin -->
+TABEL ANGGOTA<br>
+        
+            <table class="table table-bordered" style="margin-top:10px"> 
+                <tr >
+                  <td>ID_ANGGOTA</td>
+                  <td>NAMA</td>
+                  <td>TGL DAFTAR</td>
+                  <td>NO TELP</td>
+                  <td>ALAMAT</td>
+                  <td>TGL LAHIR</td>
+                  <td>EDIT</td>
+                  <td>HAPUS</td>
+                </tr>
+            <?php
+                     include "connection.php";
+                     $query = mysqli_query($conn,"SELECT * FROM anggota a 
+                        JOIN pinjam p
+                        ON p(id_anggota) = a(id_anggota)
+                        JOIN detail_pinjam dp
+                        ON dp(id_pinjam) = p(id_pinjam)
+                        WHERE DATEDIFF(p(tgl_haruskembali),dp(tgl_kembali))>=3;");
+                     while($data = mysqli_fetch_array($query))
+                     echo "
+                    <tr>
+                        <td>".$data['id_anggota']."</td>
+                        <td>".$data['nama']."</td>
+                        <td>".$data['tgl_daftar']."</td>
+                        <td>".$data['telp']."</td>
+                        <td>".$data['alamat']."</td> 
+                        <td>".$data['tgl_lahir']."</td>
+                        <td></td>
+                        <td> </td>            
+                    </tr>"
+            ?>
+        </table>
 
 
 </div>
