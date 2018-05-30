@@ -36,23 +36,23 @@ TABEL ANGGOTA<br>
 			      <td>TGL LAHIR</td>
 			      <td>EDIT</td>
 			      <td>HAPUS</td>
+			      <a href=""></a>
 			    </tr>
 			<?php
 				     include "connection.php";
 				     $query = mysqli_query($conn,"SELECT * FROM ANGGOTA");
-				     while($data = mysqli_fetch_array($query))
-				     echo "
+				     while($data = mysqli_fetch_array($query)) {?>
 				    <tr>
-				        <td>".$data['id_anggota']."</td>
-				        <td>".$data['nama']."</td>
-				        <td>".$data['tgl_daftar']."</td>
-				        <td>".$data['telp']."</td>
-				        <td>".$data['alamat']."</td> 
-				        <td>".$data['tgl_lahir']."</td>
-				       	<td></td>
-				       	<td> </td>			  
-				    </tr>"
-			?>
+				    	<td><?php echo $data['id_anggota'];?></td>
+				        <td><?php echo $data['nama'];?></td>
+				        <td><?php echo $data['tgl_daftar'];?></td>
+				        <td><?php echo $data['telp'];?></td>
+				        <td><?php echo $data['alamat'];?></td> 
+				        <td><?php echo $data['tgl_lahir'];?></td>
+				       	<td><a href="">EDIT</a></td>
+				       	<td><a href="">DELETE</a></td>	  
+				    </tr>
+		<?php }	?>
         </table>
 				<a href="coba.php" class="tm-bg-green-1 tm-btn-rounded tm-btn-green">TAMBAH</a>
 
