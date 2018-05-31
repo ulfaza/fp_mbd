@@ -36,11 +36,10 @@ TABEL ANGGOTA<br>
 			      <td>TGL LAHIR</td>
 			      <td>EDIT</td>
 			      <td>HAPUS</td>
-			      <a href=""></a>
 			    </tr>
 			<?php
 				     include "connection.php";
-				     $query = mysqli_query($conn,"SELECT * FROM ANGGOTA");
+				     $query = mysqli_query($conn,"SELECT * FROM anggota");
 				     while($data = mysqli_fetch_array($query)) {?>
 				    <tr>
 				    	<td><?php echo $data['id_anggota'];?></td>
@@ -54,7 +53,7 @@ TABEL ANGGOTA<br>
 				    </tr>
 		<?php }	?>
         </table>
-				<a href="coba.php" class="tm-bg-green-1 tm-btn-rounded tm-btn-green">TAMBAH</a>
+				<a href="tambah_anggota.php" class="tm-bg-green-1 tm-btn-rounded tm-btn-green">TAMBAH</a>
 
 <br><br>TABEL KOLEKSI<br>
 		
@@ -73,22 +72,21 @@ TABEL ANGGOTA<br>
 			<?php
 				     include "connection.php";
 				     $query = mysqli_query($conn,"SELECT * FROM KOLEKSI");
-				     while($data = mysqli_fetch_array($query))
-				     echo "
+				     while($data = mysqli_fetch_array($query)){?>
 				    <tr>
-				        <td>".$data['kl_id']."</td>
-				        <td>".$data['id_kategori']."</td>
-				        <td>".$data['p_id']."</td>
-				        <td>".$data['kl_judul']."</td>
-				        <td>".$data['kl_tahun']."</td> 
-				        <td>".$data['kl_isbn']."</td>
-				       	<td>".$data['penulis']."</td>
-				       	<td></td>
-				       	<td> </td>			  
+				        <td><?php echo $data['kl_id']?></td>
+				        <td><?php echo $data['id_kategori']?></td>
+				        <td><?php echo $data['p_id']?></td>
+				        <td><?php echo $data['kl_judul']?></td>
+				        <td><?php echo $data['kl_tahun']?></td> 
+				        <td><?php echo $data['kl_isbn']?></td>
+				       	<td><?php echo $data['penulis']?></td>
+				       	<td><a href="">EDIT</a></td>
+				       	<td><a href="">DELETE</a></td>				  
 				    </tr>"
-			?>
+		<?php }	?>
         </table>
-        <a href="coba.php" class="tm-bg-green-1 tm-btn-rounded tm-btn-green">TAMBAH</a>
+        <a href="tambah_koleksi.php" class="tm-bg-green-1 tm-btn-rounded tm-btn-green">TAMBAH</a>
         <BR><BR>
 TABEL KATEGORI<br>
 		
@@ -115,12 +113,6 @@ TABEL KATEGORI<br>
         <a href="coba.php" class="tm-bg-green-1 tm-btn-rounded tm-btn-green">TAMBAH</a>
         <BR>
         <BR>
-
-
-
-
-
-
     </div>
 </div>
 </body>
